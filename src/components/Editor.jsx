@@ -10,7 +10,12 @@ const filenames = {
   html: "index.html",
 };
 
-export default function EditorPanel({ language, theme }) {
+export default function EditorPanel({
+  language,
+  theme,
+  code,
+  setCode,
+}) {
   return (
     <div className="w-1/2 flex flex-col border-r border-gray-700">
 
@@ -21,9 +26,15 @@ export default function EditorPanel({ language, theme }) {
 
       <MonacoEditor
         height="100%"
+        defaultLanguage={language}
         language={language === "cpp" ? "cpp" : language}
         theme={theme === "dark" ? "vs-dark" : "light"}
-        value={`// Start coding in ${language}`}
+        value={code}
+        onChange={(value) => setCode(value ?? "")}
+        options={{
+          fontSize: 14,
+          minimap: { enabled: false },
+        }}
       />
     </div>
   );

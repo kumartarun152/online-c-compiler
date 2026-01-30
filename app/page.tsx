@@ -9,6 +9,7 @@ import OutputPanel from "@/components/Output";
 export default function Home() {
   const [language, setLanguage] = useState("javascript");
   const [theme, setTheme] = useState("dark");
+  const [code, setCode] = useState("");
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -22,8 +23,13 @@ export default function Home() {
         />
 
         <div className="flex flex-1 border-t border-gray-700">
-          <EditorPanel language={language} theme={theme} />
-          <OutputPanel />
+          <EditorPanel
+            language={language}
+            theme={theme}
+            code={code}
+            setCode={setCode}
+          />
+          <OutputPanel output={code} />
         </div>
       </div>
     </div>
