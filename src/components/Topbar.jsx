@@ -20,7 +20,6 @@ export default function Topbar({ language, theme, setTheme }) {
   return (
     <div className="h-24 bg-[#1e293b] flex items-center justify-between px-6 border-b border-gray-700">
 
-      {/* Logo + Title */}
       <div className="flex items-center gap-4">
         <div className="relative w-[90px] h-[50px] md:w-[110px] md:h-[56px]">
           <Image
@@ -37,7 +36,6 @@ export default function Topbar({ language, theme, setTheme }) {
         </span>
       </div>
 
-      {/* Controls */}
       <div className="flex items-center gap-4">
         <button title="Fullscreen" className="hover:text-blue-400">
           <Maximize size={20} />
